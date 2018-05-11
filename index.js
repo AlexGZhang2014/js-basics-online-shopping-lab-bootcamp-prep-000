@@ -35,11 +35,19 @@ function viewCart() {
 }
 
 function total() {
-  // write your code here
+  let count = 0;
+  for (let i = 0; i < cart.length; i++) {
+    count += cart[i][itemPrice];
+  }
+  return count;
 }
 
 function removeFromCart(item) {
-  // write your code here
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i][itemName] === item) {
+      
+    }
+  }
 }
 
 function placeOrder(cardNumber) {
