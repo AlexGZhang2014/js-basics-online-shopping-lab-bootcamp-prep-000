@@ -20,16 +20,16 @@ function viewCart() {
     return "Your shopping cart is empty."
   }
   else if (cart.length === 1) {
-    string = string.concat(`${cart[0]["itemName"]} at ${cart[0]["itemPrice"]}}`);
+    string = string.concat(`${cart[0]["itemName"]} at $${cart[0]["itemPrice"]}`);
   }
   else if (cart.length === 2) {
-    string = string.concat(`${cart[0]["itemName"]} at ${cart[0]["itemPrice"]}, and ${cart[1]["itemName"]} at ${cart[1]["itemPrice"]}.`);
+    string = string.concat(`${cart[0]["itemName"]} at $${cart[0]["itemPrice"]}, and ${cart[1]["itemName"]} at $${cart[1]["itemPrice"]}.`);
   }
   else {
     for (let i = 0; i < cart.length - 1; i++) {
-      string = string.concat(`${cart[i][itemName]} at ${cart[i][itemPrice]}, `);
+      string = string.concat(`${cart[i]["itemName"]} at ${cart[i]["itemPrice"]}, `);
     }
-    string = string.concat(`and ${cart[cart.length - 1][itemName]} at ${cart[cart.length - 1][itemPrice]}.`);
+    string = string.concat(`and ${cart[cart.length - 1]["itemName"]} at ${cart[cart.length - 1]["itemPrice"]}.`);
   }
   return string;
 }
@@ -61,6 +61,6 @@ function placeOrder(cardNumber) {
   else {
     let totalCost = total();
     cart = [];
-    return `Your total cost is ${totalCost}, which will be charged to the card ${cardNumber}.`;
+    return `Your total cost is $${totalCost}, which will be charged to the card ${cardNumber}.`;
   }
 }
