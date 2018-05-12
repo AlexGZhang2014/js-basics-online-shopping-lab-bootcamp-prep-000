@@ -27,9 +27,9 @@ function viewCart() {
   }
   else {
     for (let i = 0; i < cart.length - 1; i++) {
-      string = string.concat(`${cart[i]["itemName"]} at ${cart[i]["itemPrice"]}, `);
+      string = string.concat(`${cart[i]["itemName"]} at $${cart[i]["itemPrice"]}, `);
     }
-    string = string.concat(`and ${cart[cart.length - 1]["itemName"]} at ${cart[cart.length - 1]["itemPrice"]}.`);
+    string = string.concat(`and ${cart[cart.length - 1]["itemName"]} at $${cart[cart.length - 1]["itemPrice"]}.`);
   }
   return string;
 }
